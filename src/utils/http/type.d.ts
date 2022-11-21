@@ -30,6 +30,11 @@ export interface CustomAxiosRequestConfig extends AxiosRequestConfig {
 
 export interface BackendResponse {
   code: number;
-  data: unknown;
+  data: any;
   message?: string;
 }
+
+export type CreateRequest = (
+  method: string,
+  customConfig: CustomAxiosRequestConfig
+) => Promise<any>;

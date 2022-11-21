@@ -1,3 +1,5 @@
+import type { Menu } from "@/store/modules/permission";
+import type { UserInfo } from "@/store/modules/user";
 import { get, post } from "@/utils/http";
 
 export interface LoginParams {
@@ -17,3 +19,7 @@ export const loginApi = (params: LoginParams) =>
     data: params,
     isShowSuccessMessage: false,
   });
+
+export const getUserInfoApi = () => get<UserInfo>({ url: "/user/getUserInfo" });
+
+export const getMenuListApi = () => get<Menu[]>({ url: "/user/getMenuList" });
